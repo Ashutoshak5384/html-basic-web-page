@@ -66,3 +66,5 @@
 <!-- kuch bhi daal do koi dikkat nahi hai- -->
 #hello world
 <!--My First Shitty Program --!>
+# KUCH LOCHA
+<!-- KUCH BHI LOCHA -->
