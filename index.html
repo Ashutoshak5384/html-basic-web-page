@@ -17,14 +17,6 @@
     <link rel="shortcut icon" href="img/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-    <!-- Added Firebase Scripts-->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -45,8 +37,11 @@
     </section>
     
     <!--top button start -->
-     
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-double-up"></i></div></button>
+
+ 
       <!--top button end -->
+   <button onclick="topFunction()" id="myBtn" title="Go to end"><i class="fa fa-angle-double-up"></i></div></button> 
 
 //Get the button
 var mybutton = document.getElementById("myBtn");
@@ -163,6 +158,7 @@ function topFunction() {
     
 
     <!-- TODO : Make a Footer -->
+   
 
     <!-- TODO : Add Social Icons -->
    <div class="icon-bar">
