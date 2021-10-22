@@ -1,0 +1,156 @@
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educode</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+</head>
+<body>
+    
+    <section id="header" style="background-image: url('img/background.png');">
+        <div class="container">
+            <div class="header-text">
+                <h1>The purpose is to <br> teach, bring learning to people</h1>
+                <span class="square"></span>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+                <a href="#about"><button class="common-btn">Read More</button></a>
+                <div class="line">
+                    <span class="line-1"></span> <br>
+                    <span class="line-2"></span> <br>
+                    <span class="line-3"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--top button start -->
+     
+      <!--top button end -->
+
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+    <!-- About Us -->
+    <section id="about">
+        <div class="about-left-col">
+            <img src="img/about.png" alt="abt-img">
+        </div>
+        <div class="about-right-col">
+            <div class="about-text">
+                <h1>About Us</h1>
+                <span class="square"></span>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it oer 2000 years old. Richard McClintock, a Latin professor at Hampden-Syndey College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cities of the word in classical literature, discovered the undoubtable source.</p><br><br>
+                <div class="line">
+                    <span class="line-1"></span> <br>
+                    <span class="line-2"></span> <br>
+                    <span class="line-3"></span>
+                </div>
+                <h2>"Learning is not attached by chance, it must be sought for with ardor and attended to with diligence"</h2>
+                <h3> -Anonymous - </h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features">
+        <div class="feature-row">
+            <div class="feature-col">
+                <img src="img/pic-1.png" alt="">
+                <h4>Learn Anywhere</h4>
+                <p>Switch between your computer, tablet or mobile</p>
+            </div>
+            <div class="feature-col">
+                <img src="img/pic-2.png" alt="">
+                <h4>Expert Teachers</h4>
+                <p>Learn from industry experts who are passionate about teaching.</p>
+            </div>
+            <div class="feature-col">
+                <img src="img/pic-3.png" alt="">
+                <h4>Unlimited Resources</h4>
+                <p>Choose what you'd like to learn from our extensive subscription library</p>
+            </div>
+        </div>
+        <div class="feature-btn">
+            <div class="line">
+                <span class="line-1"></span><br>
+                <span class="line-2"></span><br>
+                <span class="line-3"></span>
+            </div>
+            <a href="#courses"><button class="common-btn">Start Free Trial</button></a>
+        </div>
+    </section>
+
+    <!-- Courses -->
+    <section id="courses">
+        <div class="container course-row">
+            <div class="course-left-col">
+                <div class="course-text">
+                    <h1>Browse our top <br>courses</h1>
+                    <span class="square"></span>
+                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
+                    from 45 BC, making it oer 2000 years old. Richard McClintock, a Latin professor at Hampden</p>
+                    <a href="pricing.html" target="_blank"><button class="common-btn">View Pricing</button></a>
+                    <div class="line">
+                        <span class="line-1"></span><br>
+                        <span class="line-2"></span><br>
+                        <span class="line-3"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="course-right-col">
+                <img src="img/course.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers -->
+    <section id="offer">
+        <div class="about-left-col">
+            <img src="img/offer.png" alt="offers-img">
+        </div>
+        <div class="about-right-col">
+            <div class="about-text">
+                <h1>Limitless learning, <br>limitless possibilities</h1>
+                <span class="square"></span>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it oer 2000 years old. Richard McClintock, a Latin professor at Hampden-Syndey College in Virginia.</p>
+                <a href="#contact"><button class="common-btn">Start Free Trial</button></a>
+                <div class="line">
+                    <span class="line-1"></span><br>
+                    <span class="line-2"></span><br>
+                    <span class="line-3"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- TODO : Make a Footer -->
+   
+
+    <!-- TODO : Add Social Icons -->
+   
+   
+    <script src="js/smooth-scroll.min.js"></script>
+    <script src="js/smooth-scroll.polyfills.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
