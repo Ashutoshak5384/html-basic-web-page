@@ -1,5 +1,5 @@
 # kch-bhi-daal-do-
-<!-- Write your comments here -->
+<!-- JAI MATA DI -->
 # KUCH
 <!-- KUCH BHI -->
 # kch-bhi-daal-do-
@@ -8,7 +8,7 @@
 <!-- KUCH BHI -->
 # kch-bhi-daal-do-
 <!-- Write your comments here -->
-# KUCH
+# KUCH-mat-dalo
 <!-- KUCH BHI -->
 # kch-bhi-daal-do-
 <!-- Write your comments here -->
