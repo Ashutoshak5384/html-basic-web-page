@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.productgrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
+    gap: 2rem;
+}
+.stacked{
+    display: grid;
+}
+.stacked > * {
+grid-column: 1/2;
+grid-row: 1/2;
+}
+.card{
+    /* border:3px solid hotpink; */
+    aspect-ratio: 1/1.5;
+   
+}
+.cardcontent{
+z-index: 10;
+background-color: aliceblue;
+align-self:end;
+margin: .5rem .5rem 2rem;
+padding: .5rem;
+box-shadow: 0 0.25rem 1rem rgb(7, 51, 80);
+}
+.cardtitle{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: rgb(184, 5, 5);
+}
+.cardprice{
+    font-size: 3rem;
+}
+.card__img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+.card.featured{
+    aspect-ratio: 1/1.5;
+}
+@media(min-width:40em){
+
+
+.card.featured{
+    grid-row: span 2;
+    grid-column: span 2;
+}
+.card.featured.card__img{
+    aspect-ratio: 1/1.25;
+}
+}
