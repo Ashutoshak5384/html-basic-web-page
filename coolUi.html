@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Super Cool — Responsive Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1120cc;
+      --glass: rgba(255,255,255,0.06);
+      --accent1: #7c3aed; /* violet */
+      --accent2: #06b6d4; /* teal */
+      --muted: #9aa4b2;
+      --glass-border: rgba(255,255,255,0.08);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent), radial-gradient(1000px 500px at 90% 90%, rgba(6,182,212,0.08), transparent), var(--bg); color:#e6eef6}
+
+    .wrap{max-width:1200px;margin:36px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;background:linear-gradient(135deg,var(--accent1),var(--accent2));border-radius:12px;display:grid;place-items:center;font-weight:800;color:white;font-family:Montserrat, Inter}
+    h1{font-size:20px;margin:0}
+    header p{margin:0;color:var(--muted);font-size:13px}
+
+    nav{display:flex;gap:10px;align-items:center}
+    .btn{background:transparent;border:1px solid var(--glass-border);padding:10px 14px;border-radius:10px;cursor:pointer;color:inherit;font-weight:600}
+    .btn:hover{transform:translateY(-3px)}
+
+    .hero{margin-top:26px;display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(8px);border:1px solid var(--glass-border);padding:22px;border-radius:16px}
+
+    .headline{font-size:28px;line-height:1.02;margin:0 0 8px 0}
+    .sub{color:var(--muted);margin:0 0 16px 0}
+    .controls{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .tile{position:relative;overflow:hidden;border-radius:12px;height:140px;border:1px solid rgba(255,255,255,0.03)}
+    .tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+    .tile:hover img{transform:scale(1.06)}
+    .tile .meta{position:absolute;left:8px;bottom:8px;background:linear-gradient(90deg,rgba(0,0,0,0.5),transparent);padding:6px 10px;border-radius:8px;font-size:12px}
+
+    /* right column */
+    .stats{display:flex;flex-direction:column;gap:12px}
+    .big{font-size:40px;font-weight:800}
+    .pill{background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:8px 12px;border-radius:999px;color:white;font-weight:700;display:inline-block}
+
+    footer{margin-top:28px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .tile{height:120px}
+    }
+    @media (max-width:520px){
+      .wrap{padding:12px;margin:18px}
+      .brand h1{font-size:16px}
+      .gallery{grid-template-columns:repeat(1,1fr)}
+      .tile{height:180px}
+      .big{font-size:32px}
+    }
+
+    /* little floating shapes */
+    .float-blob{position:fixed;right:-60px;top:20vh;pointer-events:none;width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,var(--accent1),var(--accent2));filter: blur(40px);opacity:0.06;transform:rotate(15deg)}
+
+    /* subtle animations */
+    .glow{box-shadow:0 8px 30px rgba(124,58,237,0.1), inset 0 -8px 30px rgba(6,182,212,0.03)}
+
+  </style>
+</head>
+<body>
+  <div class="float-blob" aria-hidden="true"></div>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">SP</div>
+        <div>
+          <h1>Super Cool UI</h1>
+          <p>Responsive one-file demo — modern UI, animations, and random images.</p>
+        </div>
+      </div>
+
+      <nav>
+        <button class="btn" id="shuffle">Shuffle Images</button>
+        <button class="btn" id="toggleDark">Toggle Theme</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <p class="sub">Interactive demo • Single-file • No build tools</p>
+        <h2 class="headline">A clean, modern gallery with smooth micro-interactions</h2>
+        <p class="sub">Hover images, shuffle/randomize, and enjoy responsive layout. Images are pulled from a random image provider each load for variety.</p>
+
+        <div class="controls">
+          <span class="pill">Fully Responsive</span>
+          <span class="pill">Accessible</span>
+          <span class="pill">No deps</span>
+        </div>
+
+        <div class="gallery" id="gallery">
+          <!-- tiles injected by JS -->
+        </div>
+      </div>
+
+      <aside class="card stats glow">
+        <div>
+          <div class="big" id="count">9+</div>
+          <div style="color:var(--muted);margin-top:6px">Beautiful images generated randomly</div>
+        </div>
+
+        <div style="margin-top:12px">
+          <strong>How it works</strong>
+          <p style="margin:6px 0;color:var(--muted);font-size:13px">This single HTML file requests unique images using <code>picsum.photos</code> and places them in a responsive CSS grid. Click <em>Shuffle</em> to get a new set.</p>
+        </div>
+
+        <div style="margin-top:14px;display:flex;gap:10px;justify-content:flex-end">
+          <button class="btn" id="download">Download HTML</button>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <div>Made with ❤️ — tweak it and make it yours</div>
+      <div>Tip: try on mobile to see responsive breakpoints</div>
+    </footer>
+  </div>
+
+  <script>
+    // configuration
+    const IMAGES = 9; // default tiles
+    const gallery = document.getElementById('gallery');
+    const countEl = document.getElementById('count');
+
+    function randSeed() { return Math.floor(Math.random()*10000); }
+
+    function buildTiles(n){
+      gallery.innerHTML = '';
+      const seed = randSeed();
+      for(let i=0;i<n;i++){
+        const w = 600 + Math.floor(Math.random()*400);
+        const h = 400 + Math.floor(Math.random()*300);
+        // using picsum.photos for random images. Each URL includes seed for variety.
+        const src = `https://picsum.photos/seed/${seed + i}/${w}/${h}`;
+        const div = document.createElement('div');
+        div.className = 'tile';
+        div.innerHTML = `<img loading="lazy" alt="Random image ${i+1}" src="${src}"/><div class="meta">#${i+1}</div>`;
+        gallery.appendChild(div);
+      }
+      countEl.textContent = n + '+';
+    }
+
+    // initial render
+    buildTiles(IMAGES);
+
+    // shuffle button
+    document.getElementById('shuffle').addEventListener('click', ()=> buildTiles(IMAGES));
+
+    // toggle theme
+    let dark = true;
+    document.getElementById('toggleDark').addEventListener('click', ()=>{
+      if(dark){
+        document.documentElement.style.setProperty('--bg','#f7fafc');
+        document.documentElement.style.setProperty('--card','#ffffffcc');
+        document.documentElement.style.setProperty('--glass','rgba(2,6,23,0.06)');
+        document.documentElement.style.setProperty('--muted','#334155');
+        document.documentElement.style.setProperty('--glass-border','rgba(2,6,23,0.06)');
+        document.documentElement.style.setProperty('color','#061421');
+      } else {
+        document.documentElement.style.setProperty('--bg','#0f1724');
+        document.documentElement.style.setProperty('--card','#0b1120cc');
+        document.documentElement.style.setProperty('--glass','rgba(255,255,255,0.06)');
+        document.documentElement.style.setProperty('--muted','#9aa4b2');
+        document.documentElement.style.setProperty('--glass-border','rgba(255,255,255,0.08)');
+        document.documentElement.style.removeProperty('color');
+      }
+      dark = !dark;
+    });
+
+    // download current HTML
+    document.getElementById('download').addEventListener('click', ()=>{
+      const blob = new Blob([document.documentElement.outerHTML],{type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'super_cool_responsive_page.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    // accessibility: allow keyboard shuffle (S) and theme toggle (T)
+    window.addEventListener('keydown', (e)=>{
+      if(e.key.toLowerCase()==='s') document.getElementById('shuffle').click();
+      if(e.key.toLowerCase()==='t') document.getElementById('toggleDark').click();
+    });
+  </script>
+</body>
+</html>
