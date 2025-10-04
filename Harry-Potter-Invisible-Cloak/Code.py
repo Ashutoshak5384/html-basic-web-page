@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 import time
 
-print(""" Sarvekash:  Hey !! Would you like to try my invisibility cloak ??
-         Its awesome !!
+print(""" Sarvekash :  Hey !! Would you like to try my invisibility cloak ??
+         Its awesome !! Invisible
         
          Prepare to get invisible .....................""")
 
