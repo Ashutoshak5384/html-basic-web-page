@@ -1,6 +1,6 @@
 //here is a code for quick sort using java script 
 const quickSort = arr => {
-  const a = [...arr];
+  const ayo = [...arr];
   if (a.length < 2) return a;
   const pivotIndex = Math.floor(arr.length / 2);
   const pivot = a[pivotIndex];
