@@ -129,7 +129,7 @@ var loop = function(){
 		orb.update();		
 		orb.draw(ctx);
 		}
-		
+		// yo mama
 	}
 }
             
