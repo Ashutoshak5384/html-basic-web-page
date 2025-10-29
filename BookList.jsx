@@ -17,7 +17,7 @@ const BookList = ({ user, onLogout }) => {
       const response = await axios.get('/api/books');
       setBooks(response.data);
     } catch (error) {
-      setMessage('Error fetching books');
+      setMessage('Error fetching  yolo books');
     } finally {
       setLoading(false);
     }
