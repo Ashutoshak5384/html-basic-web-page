@@ -4,7 +4,7 @@ class A
        protected int i;
        void setdata()
         {
-            i=8;
+            i=10;
         }
       void show()
      {
