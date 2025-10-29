@@ -7,7 +7,7 @@ class Client
 	public static void main(String[] args)throws Exception{
 		Socket s = new Socket("localhost" ,777);
 		InputStream obj = s.getInputStream();
-		BufferedReader br = new BufferedReader(new InputStreamReader(obj));
+		BufferedReader br = new BufferedReader(new InputStreamReader(object));
 		String str;
 		while((str = br.readLine()) != null)
 			System.out.println("From server "+str);
