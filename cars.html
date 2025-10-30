@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speed Motors</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1b1b1b, #333);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+header {
+  padding: 20px;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: #ff3d00;
+}
+p {
+  font-size: 1.2em;
+  max-width: 500px;
+}
+button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #ff3d00;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #ff6e40;
+}
+.car {
+  position: absolute;
+  bottom: 10%;
+  left: -200px;
+  width: 150px;
+  animation: drive 8s linear infinite;
+}
+@keyframes drive {
+  0% { left: -200px; }
+  100% { left: 110%; }
+}
+</style>
+</head>
+<body>
+<header>Speed Motors</header>
+<div class="hero">
+  <h1>Feel the Thrill</h1>
+  <p>Experience the power of innovation and speed. Join us in redefining the future of cars.</p>
+  <button>Explore Models</button>
+</div>
+<img class="car" src="https://cdn-icons-png.flaticon.com/512/743/743922.png" alt="Car">
+</body>
+</html>
